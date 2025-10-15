@@ -1,0 +1,15 @@
+{{!< default}}
+
+<main class="tag-main">
+  <h1>{{tag.name}}</h1>
+  <section class="tag-posts">
+    {{#get "posts" filter="tags:{{tag.slug}}" include="authors,tags" limit="10"}}
+      {{#foreach posts}}
+        <article class="tag-article">
+          <h2><a href="{{url}}">{{title}}</a></h2>
+          <p>{{excerpt}}</p>
+        </article>
+      {{/foreach}}
+    {{/get}}
+  </section>
+</main>

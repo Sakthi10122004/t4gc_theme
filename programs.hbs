@@ -1,0 +1,17 @@
+{{!< default}}
+<section class="programs-list container">
+  <h1 class="programs-title">Our Programs</h1>
+
+  <div class="programs-grid">
+    {{#foreach posts}}
+      <article class="program-card">
+        {{#if feature_image}}
+          <img src="{{feature_image}}" alt="{{title}}" class="program-image"/>
+        {{/if}}
+        <h2 class="program-title"><a href="{{url}}">{{title}}</a></h2>
+      </article>
+    {{else}}
+      <p>No program</p>
+    {{/foreach}}
+  </div>
+</section>

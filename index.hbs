@@ -1,0 +1,165 @@
+{{!< default}}
+
+<main class="home-container">
+   <p class="home-page">
+  We are a spirited team working alongside nonprofits and social enterprises 
+  to help them use technology with <strong>confidence</strong>, 
+  <strong>clarity</strong>, and <strong>care</strong>. 
+  At the heart of Tech4Good Community is a simple belief: people solving social challenges 
+  deserve tools that truly support them. Whether it’s a grassroots group restoring forests 
+  or a livelihoods nonprofit reaching the farthest corners, we design systems that are 
+  rooted in their local context and built to last.
+</p>
+    <!-- Blog Post Grid -->
+    <section class="post-grid">
+        {{#foreach posts}}
+                <article class="post-card">
+                {{#if feature_image}}
+                    <div class="post-image-wrapper">
+                        <a href="{{url}}">
+                            <img src="{{feature_image}}" alt="{{title}}" class="post-image" loading="lazy">
+                        </a>
+                    </div>
+                {{/if}}
+                <div class="post-content">
+                    <h2><a href="{{url}}">{{title}}</a></h2>
+                    <p>{{excerpt}}</p>
+                </div>
+            </article>
+        {{/foreach}}
+    </section>
+
+    <!-- Folks Who Have Our Backs -->
+<section class="supporters-section">
+  <h2>Folks Who Have Our Backs</h2>
+
+  <div class="supporters-slider">
+    <button class="slider-btn prev">&#10094;</button>
+
+    <div class="supporters-track">
+      <div class="supporter"><img src="{{asset 'images/foss-logo.png'}}" alt="Foss United"></div>
+      <div class="supporter"><img src="{{asset 'images/thinker-hub.png'}}" alt="Thinker Hub"></div>
+      <div class="supporter"><img src="{{asset 'images/apf.png'}}" alt="Azim Premji Foundation"></div>
+      <div class="supporter"><img src="{{asset 'images/oasis-logo.png'}}" alt="Oasis"></div>
+      <div class="supporter"><img src="{{asset 'images/campbell.png'}}" alt="Campbell"></div>
+      <div class="supporter"><img src="{{asset 'images/forbes.png'}}" alt="Forbes"></div>
+      <div class="supporter"><img src="{{asset 'images/nudge.png'}}" alt="Nudge"></div>
+      <div class="supporter"><img src="{{asset 'images/rohini.png'}}" alt="Rohini"></div>
+      <div class="supporter"><img src="{{asset 'images/rainmatter.png'}}" alt="Rain Matter"></div>
+      <div class="supporter"><img src="{{asset 'images/samagata.png'}}" alt="Samagata"></div>
+      <div class="supporter"><img src="{{asset 'images/tata.png'}}" alt="Tata Trust"></div>
+      <div class="supporter"><img src="{{asset 'images/edelgive.png'}}" alt="Partner 3"></div>
+
+    
+    </div>
+
+    <button class="slider-btn next">&#10095;</button>
+  </div>
+</section>
+
+
+    <!-- Testimonials -->
+<!-- Testimonials -->
+<section class="testimonials-section">
+    <h2>Testimonials</h2>
+    <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="{{asset 'images/aastha.jpg'}}" alt="Aastha" class="testimonial-img">
+                    <span>Aastha Kapoor </span>
+                    <p>“Google Ads Specialist, Google India”</p>
+                </div>
+                <div class="card-back">
+                    {{!-- <h3>More about Aastha</h3> --}}
+                    <p>"Our partnership with Tech4Good Community has been nothing short of extraordinary. From meticulous planning of the mentorship program design to the co-ownership on driving efforts & abundant enthusiasm & energy, they truly made our working experience wonderful. We learnt a lot ourselves from the planned site visits to a few non-profits, and also enjoyed the seamlessly organised Spotlight Series."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="{{asset 'images/varun.jpg'}}" alt="Varun" class="testimonial-img">
+                    <span>Varun Aamooru</span>
+                    <p>“Assistant Manager, EdelGive Foundation”</p>
+                </div>
+                <div class="card-back">
+                    {{!-- <h3>More about Varun</h3> --}}
+                    <p>"We've collaborated with Tech4Good Community on a Spotlight Series for organizations working in the space of gender. Our partnership with the team has been excellent. The team has put the need of the sector at the forefront throughout the entire process - from planning to execution. It has been a wonderful learning opportunity for us as well and gave us great insight into how NGOs can leverage technology to optimize their impact."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="{{asset 'images/danial.jpg'}}" alt="Danial" class="testimonial-img">
+                    <span>Joy Daniel</span>
+                    <p>“Founder Director, Lipok Social Foundation”</p>
+                </div>
+                <div class="card-back">
+                    {{!-- <h3>More about Danial</h3> --}}
+                    <p>We are incredibly grateful for the support from Tech4Good. They helped us develop a crucial village-level data collection tool that has truly empowered our communities for entrepreneurship. The team's expertise in introducing us to AI tools and Google Cloud has been a game-changer. This partnership is an essential step that ensures our organization stays relevant and capable in the AI era. Thank you, Tech4Good, for your vision and partnership!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- Awards & Recognitions -->
+    <section class="awards-section">
+        <h2>Awards & Recognitions</h2>
+        <div class="awards-grid">
+            <div class="award">
+                <img src="{{asset 'images/a1.png'}}" alt="Award 1">
+                <p>Tech4Good Community was awarded “Most Likely To Create Big Impact”, N/Core Tech 2019</p>
+            </div>
+            <div class="award">
+                <img src="{{asset 'images/a2.png'}}" alt="Award 2">
+                <p> Rinju is part of the Fall Cohort 2025, Acumen Fellowship </p>
+            </div>
+            <div class="award">
+                <img src="{{asset 'images/a3.png'}}" alt="Award 3">
+                <p>Anusha is a part of the first-ever Asia Pacific 2025 Cohort of Big Bets Fellowship, Rockefeller Foundation</p>
+            </div>
+            <div class="award">
+                <img src="{{asset 'images/a4.png'}}" alt="Award 3">
+                <p>Rinju won the Digital Women Awards in 2023, Impact Category by shethepeople</p>
+            </div>
+        </div>
+    </section>
+</main>
+<script>
+const track = document.querySelector('.supporters-track');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+let index = 0;
+const logos = document.querySelectorAll('.supporter');
+const visibleCount = 5;
+const total = logos.length;
+
+nextBtn.addEventListener('click', () => {
+  if (index < total - visibleCount) {
+    index++;
+    updateSlider();
+  }
+});
+
+prevBtn.addEventListener('click', () => {
+  if (index > 0) {
+    index--;
+    updateSlider();
+  }
+});
+
+function updateSlider() {
+  const slideWidth = logos[0].offsetWidth;
+  track.style.transform = `translateX(${-index * slideWidth}px)`;
+}
+</script>
+

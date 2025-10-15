@@ -1,0 +1,48 @@
+{{!< default}}
+
+<section class="signin-section container">
+  <h1>Member Sign In</h1>
+  <div id="custom-signin">
+      <button id="directSignInBtn" class="btn">Sign in</button>
+      <p id="signin-msg"></p>
+      <p class="note">
+        New here? <a href="/signup/">Sign up</a>
+      </p>
+  </div>
+</section>
+
+<script>
+document.getElementById('directSignInBtn').addEventListener('click', async () => {
+  const token = localStorage.getItem('ghost_member_token');
+  const msg = document.getElementById('signin-msg');
+
+  if (!token) {
+    msg.textContent = "You’re not verified yet. Please check your signup email first.";
+    return;
+  }
+
+  try {
+    const res = await fetch('/members/api/member/', {
+      headers: { 'Authorization': `Ghost ${token}` }
+    });
+
+    if (res.ok) {
+      const member = await res.json();
+      if (member && member.email) {
+        msg.textContent = "✅ Signed in successfully!";
+        console.log("Signed in:", member.email);
+        window.location.href = '/members/';
+      } else {
+        msg.textContent = "⚠️ Invalid or expired session. Please re-verify your email.";
+        localStorage.removeItem('ghost_member_token');
+      }
+    } else {
+      msg.textContent = "⚠️ Login failed. Try again.";
+      localStorage.removeItem('ghost_member_token');
+    }
+  } catch (err) {
+    msg.textContent = "❌ Error connecting to Ghost.";
+    console.error(err);
+  }
+});
+</script>

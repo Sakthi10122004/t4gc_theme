@@ -1,0 +1,12 @@
+{{!< default}}
+<main>
+    <h1>{{primary_author.name}}</h1>
+    <section>
+        {{#foreach posts}}
+            <article class="post-card">
+                <h2><a href="{{url}}">{{title}}</a></h2>
+                <p>{{excerpt}}</p>
+            </article>
+        {{/foreach}}
+    </section>
+</main>

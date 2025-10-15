@@ -1,0 +1,31 @@
+{{!< default}}
+
+<main class="gh-main">
+  <section class="gh-container">
+    <h1 class="gh-title">📊 Site Analytics</h1>
+    <p>This page displays analytics fetched using the Ghost Admin API.</p>
+
+    <div id="analytics-data">Loading analytics...</div>
+  </section>
+
+  <script>
+    async function loadAnalytics() {
+      try {
+        const res = await fetch('/analytics-data.json');
+        const data = await res.json();
+
+        let html = '<h2>Total Posts: ' + data.totalPosts + '</h2><ul>';
+        data.posts.forEach(p => {
+          html += '<li>' + p.title + ' (' + p.visibility + ')</li>';
+        });
+        html += '</ul>';
+
+        document.getElementById('analytics-data').innerHTML = html;
+      } catch (err) {
+        document.getElementById('analytics-data').innerHTML = '⚠️ Failed to load analytics data.';
+      }
+    }
+
+    loadAnalytics();
+  </script>
+</main>

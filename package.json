@@ -1,0 +1,52 @@
+{
+  "name": "t4gc-theme",
+  "description": "A clean and modern Ghost CMS theme for a non-profit organisation.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Sakthi",
+    "email": "sakthikaribeeran@gmail.com"
+  },
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "config": {
+    "posts_per_page": 10,
+    "image_sizes": {},
+    "card_assets": true,
+    "custom": {
+      "show_post_metadata": {
+        "type": "boolean",
+        "default": true,
+        "label": "Show post metadata (date, author, etc.)"
+      },
+      "feed_layout": {
+        "type": "select",
+        "label": "Feed layout style",
+        "options": ["classic", "grid", "list"],
+        "default": "classic"
+      },
+      "enable_drop_caps_on_posts": {
+        "type": "boolean",
+        "default": true,
+        "label": "Enable drop caps on posts"
+      },
+      "color_scheme": {
+        "type": "select",
+        "label": "Color Scheme",
+        "options": ["Light", "Dark", "Auto"],
+        "default": "Light"
+      },
+      "show_related_articles": {
+        "type": "boolean",
+        "label": "Show Related Articles",
+        "default": true
+      }
+    }
+  },
+  "keywords": ["ghost-theme"]
+}

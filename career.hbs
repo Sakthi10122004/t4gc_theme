@@ -1,0 +1,52 @@
+{{!< default}}
+
+<section class="programs-list container career-page">
+  <h1 class="programs-title">Careers</h1>
+
+  <div class="programs-grid career-grid">
+    {{#get "posts" filter="tags:career" include="tags,authors" limit="10"}}
+      {{#foreach posts}}
+        <article class="program-card career-card">
+          {{#if feature_image}}
+            <img src="{{feature_image}}" alt="{{title}}" class="program-image career-image"/>
+          {{/if}}
+          <div class="program-body">
+            <h2 class="program-title"><a href="{{url}}">{{title}}</a></h2>
+            {{#if primary_tag}}
+              <p class="program-tag">{{primary_tag.name}}</p>
+            {{/if}}
+            <p class="program-excerpt">{{excerpt words="25"}}</p>
+          </div>
+        </article>
+      {{/foreach}}
+    {{else}}
+      <p class="no-programs">No career posts found.</p>
+    {{/get}}
+  </div>
+</section>
+
+<style>
+/* --- Career page styles (modeled on programs page) --- */
+.career-page { padding: 48px 16px; max-width: 1100px; margin: 0 auto; }
+.programs-title { font-size: 2rem; margin-bottom: 20px; text-align: center; color: #111; }
+.programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.program-card { background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 18px rgba(15,15,15,0.06); display: flex; flex-direction: column; transition: transform .18s ease, box-shadow .18s ease; }
+.program-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(15,15,15,0.09); }
+.program-image { width: 100%; height: 160px; object-fit: cover; display: block; }
+.program-body { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.program-title { font-size: 1.125rem; margin: 0; }
+.program-title a { color: inherit; text-decoration: none; }
+.program-excerpt { color: #555; font-size: 0.95rem; margin: 0; }
+.program-tag { font-size: 0.8rem; color: #888; margin-bottom: 6px; }
+.no-programs { text-align: center; color: #666; padding: 24px 0; }
+
+/* Career-specific tweaks */
+.career-card .program-body { padding: 18px; }
+.career-image { height: 150px; }
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .programs-title { font-size: 1.5rem; }
+  .program-image, .career-image { height: 140px; }
+}
+</style>
