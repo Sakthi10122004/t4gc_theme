@@ -1,0 +1,19 @@
+collections:
+  /programs/:
+    permalink: /programs/{slug}/
+    template: programs
+    filter: tag:programs
+
+  /career/:
+    permalink: /career/{slug}/
+    template: career
+    filter: tag:career
+
+  /analytics/:
+    permalink: /analytics/{slug}/
+    template: analytics
+
+  /:
+    permalink: /{slug}/
+    template: index
+    filter: tag:programs
