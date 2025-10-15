@@ -1,0 +1,38 @@
+{
+  "url": "http://localhost:2370/",
+  "server": {
+    "port": 2370,
+    "host": "127.0.0.1"
+  },
+  "database": {
+    "client": "sqlite3",
+    "connection": {
+      "filename": "/home/ghostuser/ghost-cms/ghost-local/content/data/ghost-local.db"
+    }
+  },
+  "mail": {
+    "transport": "SMTP",
+    "options": {
+      "host": "smtp.gmail.com",
+      "port": 465,
+      "secure": true,
+      "auth": {
+        "user": "sakthikaribeeran@gmail.com",
+        "pass": "yeyv qjns xzki rnvc"
+      }
+    }
+    },
+  "logging": {
+    "transports": [
+      "file",
+      "stdout"
+    ]
+  },
+  "process": "local",
+  "security": {
+    "staffDeviceVerification": false
+  },
+  "paths": {
+    "contentPath": "/home/ghostuser/ghost-cms/ghost-local/content"
+  }
+}
